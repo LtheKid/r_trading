@@ -5,7 +5,7 @@ library(CombinePortfolio)
 # Lester's work + Akbar's help
 # stopped here
 # 3 portfolios - tangency, gmv, and naive, adapted with csv input
-df<- read.csv("C:\\Users\\P1329091\\Downloads\\wuhanport\\prices.csv", row.names="Date", header=TRUE)
+df<- read.csv("prices.csv", row.names="Date", header=TRUE)
 df[] <- lapply(df, function(x) {
     as.numeric(as.character(x))
 })
@@ -18,7 +18,9 @@ crule$w["1''2",] ## Adjusted Kan-Zhou(2007) 3-fund rule
 crule$w["124",] ## Combination rule: Tangency+GMV+naive 4-fund rule, plug-in estimator
 crule$delta["124",] ## Combination weights
 output <- crule$V[,c(1,2,4)] ## Combination targets: Tangency, GMV and naive (1/N)
-plot(output)
+
+# Look at the time series of price
+plot.ts(df)
 
 
 
