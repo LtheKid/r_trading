@@ -1,6 +1,8 @@
 # install.packages("CombinePortfolio")
 # Import dependencies
 library(CombinePortfolio)
+library(ggplot2)
+
 
 # Lester's work + Akbar's help
 # stopped here
@@ -21,6 +23,25 @@ output <- crule$V[,c(1,2,4)] ## Combination targets: Tangency, GMV and naive (1/
 
 # Look at the time series of price
 plot.ts(df)
+
+# GGPLOT2 visualizations - TODO
+theme_set(theme_minimal())
+data <- data.frame(df)
+
+# rownames(data) # get data index
+
+ggplot(data=data, aes(y=data['medtecs'], x=rownames(data))) + geom_line()
+
+library(quantmod)
+chartSeries(
+  df,
+  theme = chartTheme("white"),
+  TA = c(addBBands(),addTA(RSI(sp500.monthly)))
+)
+
+
+
+
 
 
 
