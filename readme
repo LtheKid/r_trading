@@ -1,1 +1,24 @@
-This is a repo for R code for the purpose of stock analytics. Preferred IOs are CSVs.
+This is a repo for R code for the purpose of stock analytics. Preferred I/O inputs are CSVs.
+
+
+Proposed features
+
+Visualization
+  
+  single stock analytics
+    seasonality
+    annotated time series chart
+    technical indicators
+    
+  Multi-asset analytics
+    correlation
+    covariance
+    co-integration
+    
+  Data pipeline
+    integration with web sources
+    csv merging
+    
+  
+ 
+   
